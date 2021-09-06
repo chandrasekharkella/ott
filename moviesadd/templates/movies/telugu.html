@@ -1,0 +1,71 @@
+{% extends 'movies/header.html' %}
+{% load static %}
+{% block content %}
+     <!-- page title -->
+	<section class="section section--first section--bg" data-bg="img/section/section.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section__wrap">
+						<!-- section title -->
+						<h1 class="section__title">All Tollywood Movies </h1>
+						<!-- end section title -->
+
+						<!-- breadcrumb -->
+						<ul class="breadcrumb">
+							<li class="breadcrumb__item"><a href="/">Home</a></li>
+							<li class="breadcrumb__item breadcrumb__item--active"></li>
+						</ul>
+						<!-- end breadcrumb -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end page title -->
+
+	<div>
+
+
+		<!-- catalog -->
+		<div class="catalog">
+			<div class="container">
+				<div class="row row--grid">
+					<!-- card -->
+                    {% for i in tm %}
+					<div class="col-6 col-sm-4 col-md-3 col-xl-2">
+						<div class="card">
+							<div class="card__cover">
+								 <img src="{{ i.banner }}" alt="" style="width: 182px;height: 268px"  >
+								<a href="/details" class="card__play">
+									<i class="icon ion-ios-play"></i>
+								</a>
+								<span class="card__rate card__rate--green">8.4</span>
+							</div>
+							<div class="card__content">
+								<h3 class="card__title"><a href="details.html">{{ i.title }}</a></h3>
+								<span class="card__category">
+									<a href="#">{{ i.geners}}</a>
+
+								</span>
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+					<!-- end card -->
+
+				</div>
+
+				<div class="row">
+					<!-- more -->
+					<div class="col-12">
+						<button class="catalog__more" type="button">Load more</button>
+					</div>
+					<!-- end more -->
+				</div>
+			</div>
+		</div>
+		<!-- end catalog -->
+	</div>
+
+{% endblock %}

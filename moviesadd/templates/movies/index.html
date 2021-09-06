@@ -1,0 +1,368 @@
+{% extends 'movies/header.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+    <br><br><br><br><br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+
+    <div class="carousel-inner"  >
+
+      <div class="item active">
+        <img src="{% static "img/covers/e3.jpg" %}" alt="Los Angeles" style="width:100%; height: 400px">
+        <div class="carousel-caption">
+          <h3>Los Angeles</h3>
+          <p>LA is always so much fun!</p>
+        </div>
+      </div>
+{% for i in img %}
+      <div class="item ">
+        <img src="{{ i.banner_image }}" alt="Los Angeles" style="width:100%; height: 400px">
+        <div class="carousel-caption">
+          <h3>Chicago</h3>
+          <p>Thank you, Chicago!</p>
+        </div>
+      </div>
+{% endfor %}
+
+
+
+
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only" style="color: red"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only" style="color: red"> </span>
+    </a>
+  </div>
+</div>
+
+
+ <!-- telugu movies-->
+
+    <section class="section section--border">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- section title -->
+                <div class="col-12">
+                    <div class="section__title-wrap">
+                        <h2 class="section__title">Tollywood</h2>
+
+                        <div class="section__nav-wrap">
+                            <a href="/telugu" class="section__view">View All</a>
+
+                            <button class="section__nav section__nav--next" type="button" data-nav="#carousel0">
+                                <i class="icon ion-ios-arrow-back"></i>
+                            </button>
+
+                            <button class="section__nav section__nav--prev" type="button" data-nav="#carousel0">
+                                <i class="icon ion-ios-arrow-forward"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end section title -->
+
+                <!-- carousel -->
+                 <div class="col-12">
+                    <div class="owl-carousel section__carousel" id="carousel0">
+
+{% for i in tm %}
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="{{ i.banner }}" style="width: 210px; height:268px" alt="">
+                                <a href="/details" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                                <span class="card__rate card__rate--green">7.1</span>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title"><a href="details.html">{{ i.title }}</a></h3>
+                                <span class="card__category">
+									<a href="#">{{ i.geners }}</a>
+								</span>
+                            </div>
+
+                        </div>{% endfor %}
+
+
+
+                </div>
+                <!-- carousel -->
+            </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- carousel english-->
+
+    <section class="section section--border">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- section title -->
+                <div class="col-12">
+                    <div class="section__title-wrap">
+                        <h2 class="section__title">Hollywood</h2>
+
+                        <div class="section__nav-wrap">
+                            <a href="/english" class="section__view">View All</a>
+
+                            <button class="section__nav section__nav--next" type="button" data-nav="#carousel1">
+                                <i class="icon ion-ios-arrow-back"></i>
+                            </button>
+
+                            <button class="section__nav section__nav--prev" type="button" data-nav="#carousel1">
+                                <i class="icon ion-ios-arrow-forward"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end section title -->
+
+                <!-- carousel -->
+                 <div class="col-12">
+                    <div class="owl-carousel section__carousel" id="carousel1">
+
+{% for i in em %}
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="{{ i.banner }}" style="width: 210px; height:268px" alt="">
+                                <a href="/details" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                                <span class="card__rate card__rate--green">7.1</span>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title"><a href="details.html">{{ i.title }}</a></h3>
+                                <span class="card__category">
+									<a href="#">{{ i.geners }}</a>
+								</span>
+                            </div>
+
+                        </div>{% endfor %}
+
+
+
+                </div>
+                <!-- carousel -->
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- hindhi movies-->
+    <section class="section section--border">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- section title -->
+                <div class="col-12">
+                    <div class="section__title-wrap">
+                        <h2 class="section__title">Bollywood</h2>
+
+                        <div class="section__nav-wrap">
+                            <a href="/hindi" class="section__view">View All</a>
+
+                            <button class="section__nav section__nav--next" type="button" data-nav="#carousel2">
+                                <i class="icon ion-ios-arrow-back"></i>
+                            </button>
+
+                            <button class="section__nav section__nav--prev" type="button" data-nav="#carousel2">
+                                <i class="icon ion-ios-arrow-forward"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end section title -->
+
+                <!-- carousel -->
+                 <div class="col-12">
+                    <div class="owl-carousel section__carousel" id="carousel2">
+
+{% for i in tm %}
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="{{ i.banner }}" style="width: 210px; height:268px" alt="">
+                                <a href="/details" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                                <span class="card__rate card__rate--green">7.1</span>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title"><a href="details.html">{{ i.title }}</a></h3>
+                                <span class="card__category">
+									<a href="#">{{ i.geners }}</a>
+								</span>
+                            </div>
+
+                        </div>{% endfor %}
+
+
+
+                </div>
+                <!-- carousel -->
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- expected premier-->
+      <section class="section section--border">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- section title -->
+                <div class="col-12">
+                    <div class="section__title-wrap">
+                        <h2 class="section__title">Expected Premier</h2>
+
+                        <div class="section__nav-wrap">
+                            <a href="/hindi" class="section__view">View All</a>
+
+                            <button class="section__nav section__nav--next" type="button" data-nav="#carousel3">
+                                <i class="icon ion-ios-arrow-back"></i>
+                            </button>
+
+                            <button class="section__nav section__nav--prev" type="button" data-nav="#carousel3">
+                                <i class="icon ion-ios-arrow-forward"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end section title -->
+
+                <!-- carousel -->
+                 <div class="col-12">
+                    <div class="owl-carousel section__carousel" id="carousel3">
+
+{% for i in tm %}
+                        <div class="card">
+                            <div class="card__cover">
+                                <img src="{{ i.banner }}" style="width: 210px; height:268px" alt="">
+                                <a href="/details" class="card__play">
+                                    <i class="icon ion-ios-play"></i>
+                                </a>
+                                <span class="card__rate card__rate--green">7.1</span>
+                            </div>
+                            <div class="card__content">
+                                <h3 class="card__title"><a href="details.html">{{ i.title }}</a></h3>
+                                <span class="card__category">
+									<a href="#">{{ i.geners }}</a>
+								</span>
+                            </div>
+
+                        </div>{% endfor %}
+
+
+
+                </div>
+                <!-- carousel -->
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- section -->
+    <section class="section section--border">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-xl-10">
+                    <h2 class="section__title section__title--mb"><b>FILMLOVERS</b> – Best Place for Movies</h2>
+
+                    <p class="section__text">It is a long established fact that a reader will be distracted by the
+                        readable content of a page when looking at its layout. The point of <b>using Lorem</b> Ipsum is
+                        that it has a more-or-less normal distribution of letters, as opposed to using. Many desktop
+                        publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+                        search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+
+                    <p class="section__text">Content here, content here, making it look like <a href="#">readable</a>
+                        English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+                        default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
+                        infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose (injected humour and the like).</p>
+                </div>
+            </div>
+
+            <div class="row row--grid">
+                <!-- price -->
+                <div class="col-12 col-md-6 col-lg-4 order-md-2 order-lg-1">
+                    <div class="price">
+                        <div class="price__item price__item--first"><span>Basic</span> <span>Free</span></div>
+                        <div class="price__item"><span><i class="icon ion-ios-checkmark"></i> 7 days</span></div>
+                        <div class="price__item"><span><i class="icon ion-ios-checkmark"></i> 720p Resolution</span>
+                        </div>
+                        <div class="price__item price__item--none"><span><i class="icon ion-ios-close"></i> Limited Availability</span>
+                        </div>
+                        <div class="price__item price__item--none"><span><i class="icon ion-ios-close"></i> Desktop Only</span>
+                        </div>
+                        <div class="price__item price__item--none"><span><i class="icon ion-ios-close"></i> Limited Support</span>
+                        </div>
+                        <a href="#" class="price__btn">Choose Plan</a>
+                    </div>
+                </div>
+                <!-- end price -->
+
+                <!-- price -->
+                <div class="col-12 col-md-12 col-lg-4 order-md-1 order-lg-2">
+                    <div class="price price--premium">
+                        <div class="price__item price__item--first"><span>Premium</span> <span>$34.99 <sub>/ month</sub></span>
+                        </div>
+                        <div class="price__item"><span><i class="icon ion-ios-checkmark"></i> 1 Month</span></div>
+                        <div class="price__item"><span><i class="icon ion-ios-checkmark"></i> Full HD</span></div>
+                        <div class="price__item"><span><i
+                                class="icon ion-ios-checkmark"></i> Lifetime Availability</span></div>
+                        <div class="price__item price__item--none"><span><i class="icon ion-ios-close"></i> TV & Desktop</span>
+                        </div>
+                        <div class="price__item price__item--none"><span><i class="icon ion-ios-close"></i> 24/7 Support</span>
+                        </div>
+                        <a href="#" class="price__btn">Choose Plan</a>
+                    </div>
+                </div>
+                <!-- end price -->
+
+                <!-- price -->
+                <div class="col-12 col-md-6 col-lg-4 order-md-3">
+                    <div class="price">
+                        <div class="price__item price__item--first"><span>Cinematic</span>
+                            <span>$49.99 <sub>/ month</sub></span></div>
+                        <div class="price__item"><span><i class="icon ion-ios-checkmark"></i> 2 Months</span></div>
+                        <div class="price__item"><span><i class="icon ion-ios-checkmark"></i> Ultra HD</span></div>
+                        <div class="price__item"><span><i
+                                class="icon ion-ios-checkmark"></i> Lifetime Availability</span></div>
+                        <div class="price__item"><span><i class="icon ion-ios-checkmark"></i> Any Device</span></div>
+                        <div class="price__item"><span><i class="icon ion-ios-checkmark"></i> 24/7 Support</span></div>
+                        <a href="#" class="price__btn">Choose Plan</a>
+                    </div>
+                </div>
+                <!-- end price -->
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+
+
+
+{% endblock %}
+<!-- end section -->

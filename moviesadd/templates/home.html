@@ -1,0 +1,29 @@
+ <table >
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>email</th>
+                <th>phone number</th>
+                <th>STATUS</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for i in all_contact %}
+            <tr>
+           <td>{{ i.name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phone }}</td>
+            {% if i.status %}
+            <td>Active</td>
+            {% else %}
+            <td>inactive</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
